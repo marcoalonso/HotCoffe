@@ -71,24 +71,17 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="426"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoffeTypeTableViewCell" textLabel="IP7-fe-hog" detailTextLabel="ZmK-WO-DCN" imageView="HGh-9z-UGu" rowHeight="85" style="IBUITableViewCellStyleSubtitle" id="Ce6-L8-hHa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoffeTypeTableViewCell" textLabel="IP7-fe-hog" imageView="HGh-9z-UGu" rowHeight="85" style="IBUITableViewCellStyleDefault" id="Ce6-L8-hHa">
                                         <rect key="frame" x="0.0" y="50" width="393" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ce6-L8-hHa" id="TgT-yl-gwl">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="85"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IP7-fe-hog">
-                                                    <rect key="frame" x="120" y="26.999999999999996" width="25" height="14.333333333333334"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Cappuccino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IP7-fe-hog">
+                                                    <rect key="frame" x="120" y="0.0" width="253" height="85"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZmK-WO-DCN">
-                                                    <rect key="frame" x="120.00000000000001" y="43.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -105,19 +98,10 @@
                                     <outlet property="delegate" destination="aMF-Di-30y" id="3Zd-3d-OKH"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zaE-BG-j74">
-                                <rect key="frame" x="59" y="539" width="275" height="32"/>
-                                <segments>
-                                    <segment title="Small"/>
-                                    <segment title="Medium"/>
-                                    <segment title="Large"/>
-                                    <segment title="Jumbo"/>
-                                </segments>
-                            </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GfN-g7-iMu">
                                 <rect key="frame" x="96.666666666666686" y="588" width="200" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="jtm-cG-6pW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="jtm-cG-6pW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -125,7 +109,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCA-LW-2Yo">
                                 <rect key="frame" x="96.666666666666686" y="641" width="200" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="y1T-do-XSw"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="y1T-do-XSw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -136,13 +120,11 @@
                         <constraints>
                             <constraint firstItem="GfN-g7-iMu" firstAttribute="centerX" secondItem="Vk6-Wx-Xgq" secondAttribute="centerX" id="3EQ-wa-V13"/>
                             <constraint firstItem="Nnh-gr-7yG" firstAttribute="width" secondItem="Vk6-Wx-Xgq" secondAttribute="width" id="DZR-96-9ME"/>
-                            <constraint firstItem="GfN-g7-iMu" firstAttribute="top" secondItem="zaE-BG-j74" secondAttribute="bottom" constant="18" id="G4n-3m-4tA"/>
                             <constraint firstItem="Nnh-gr-7yG" firstAttribute="leading" secondItem="lUK-im-J0K" secondAttribute="leading" id="aZr-eL-gVE"/>
                             <constraint firstItem="Nnh-gr-7yG" firstAttribute="height" secondItem="Vk6-Wx-Xgq" secondAttribute="height" multiplier="0.5" id="gnM-97-RpN"/>
-                            <constraint firstItem="zaE-BG-j74" firstAttribute="top" secondItem="Nnh-gr-7yG" secondAttribute="bottom" constant="10" id="o8d-Z1-ood"/>
+                            <constraint firstItem="GfN-g7-iMu" firstAttribute="top" secondItem="Nnh-gr-7yG" secondAttribute="bottom" constant="59" id="n9K-fE-rNv"/>
                             <constraint firstItem="Nnh-gr-7yG" firstAttribute="top" secondItem="lUK-im-J0K" secondAttribute="top" id="t8F-Mp-wXh"/>
                             <constraint firstItem="CCA-LW-2Yo" firstAttribute="centerX" secondItem="Vk6-Wx-Xgq" secondAttribute="centerX" id="tPQ-aR-17e"/>
-                            <constraint firstItem="zaE-BG-j74" firstAttribute="centerX" secondItem="Vk6-Wx-Xgq" secondAttribute="centerX" id="ymy-Pb-Cvj"/>
                             <constraint firstItem="CCA-LW-2Yo" firstAttribute="top" secondItem="GfN-g7-iMu" secondAttribute="bottom" constant="19" id="zlA-wg-6un"/>
                         </constraints>
                     </view>
