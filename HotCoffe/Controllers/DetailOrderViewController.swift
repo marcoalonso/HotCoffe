@@ -35,7 +35,17 @@ class DetailOrderViewController: UIViewController {
         coffeeEmailClient.text = "email: \(coffeOrder?.email ?? "")"
     }
     
+    func mostrarAlerta(titulo: String, mensaje: String) {
+        let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
+        let accionAceptar = UIAlertAction(title: "OK", style: .default) { _ in
+            //Do something
+        }
+        alerta.addAction(accionAceptar)
+        present(alerta, animated: true)
+    }
+    
     @IBAction func payAction(_ sender: Any) {
+       mostrarAlerta(titulo: "Total to Pay", mensaje: "$55.60")
     }
     
     @IBAction func cancelAction(_ sender: Any) {
