@@ -32,6 +32,9 @@ class AddOrderViewController: UIViewController , UITableViewDelegate, UITableVie
     private func setupUI(){
         self.coffeeSizesSegmentedControl = UISegmentedControl(items: self.vm.sizes)
         self.coffeeSizesSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(self.coffeeSizesSegmentedControl)
+        
         self.coffeeSizesSegmentedControl.topAnchor.constraint(equalTo: self.tableView.bottomAnchor, constant: 20).isActive = true
         self.coffeeSizesSegmentedControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     }
