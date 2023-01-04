@@ -20,6 +20,8 @@
 		6CA0130C295A97D200382936 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA0130A295A97D200382936 /* LaunchScreen.storyboard */; };
 		6CA01315295A997700382936 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA01314295A997700382936 /* OrdersTableViewController.swift */; };
 		6CA01317295A99A600382936 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA01316295A99A600382936 /* AddOrderViewController.swift */; };
+		6CA610EB2965406A00D5C479 /* NewCoffeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA610E92965406A00D5C479 /* NewCoffeeCell.swift */; };
+		6CA610EC2965406A00D5C479 /* NewCoffeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA610EA2965406A00D5C479 /* NewCoffeeCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		6CA0130D295A97D200382936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CA01314295A997700382936 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
 		6CA01316295A99A600382936 /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
+		6CA610E92965406A00D5C479 /* NewCoffeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCoffeeCell.swift; sourceTree = "<group>"; };
+		6CA610EA2965406A00D5C479 /* NewCoffeeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCoffeeCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			children = (
 				6C78E31229652614000B0D1E /* ClientCell.swift */,
 				6C78E31129652614000B0D1E /* ClientCell.xib */,
+				6CA610E92965406A00D5C479 /* NewCoffeeCell.swift */,
+				6CA610EA2965406A00D5C479 /* NewCoffeeCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +196,7 @@
 				6CA01309295A97D200382936 /* Assets.xcassets in Resources */,
 				6C78E31329652614000B0D1E /* ClientCell.xib in Resources */,
 				6CA01307295A97CB00382936 /* Main.storyboard in Resources */,
+				6CA610EC2965406A00D5C479 /* NewCoffeeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA610EB2965406A00D5C479 /* NewCoffeeCell.swift in Sources */,
 				6C25A6FF296384BF006411AC /* Order.swift in Sources */,
 				6CA01300295A97CB00382936 /* AppDelegate.swift in Sources */,
 				6C78E31429652614000B0D1E /* ClientCell.swift in Sources */,
@@ -363,6 +371,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -391,6 +400,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

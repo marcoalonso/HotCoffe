@@ -8,16 +8,22 @@
 import Foundation
 
 enum CoffeeType: String, Codable, CaseIterable {
+    case raf
+    case breve
+    case machiato
+    case americano
+    case caramel
+    case expresso
+    case mocha
+    case flatwhitte
     case cappuccino
-    case latte
-    case espressino
-    case cortado
 }
 
 enum CoffeeSize: String, Codable, CaseIterable {
     case small
     case medium
     case large
+    case jumbo
 }
 
 struct Order: Codable {

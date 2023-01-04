@@ -14,7 +14,7 @@ class OrdersTableViewController: UITableViewController, AddCoffeOrderDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.register(UINib(nibName: "ClientCell", bundle: nil), forCellReuseIdentifier: "OrderTableViewCell")
         populateOrders()
     }
     
@@ -58,8 +58,13 @@ class OrdersTableViewController: UITableViewController, AddCoffeOrderDelegate {
     }
     
     //MARK: TableView Methods
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,9 +73,11 @@ class OrdersTableViewController: UITableViewController, AddCoffeOrderDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let vm = self.orderListViewModel.orderViewModel(at: indexPath.row)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTableViewCell", for: indexPath)
-        cell.textLabel?.text = vm.type
-        cell.detailTextLabel?.text = vm.size
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTableViewCell", for: indexPath) as! ClientCell
+        cell.name.text = vm.name
+        cell.email.text = vm.email
+        cell.type.text = vm.type
+        cell.size.text = vm.size
         return cell
     }
     
