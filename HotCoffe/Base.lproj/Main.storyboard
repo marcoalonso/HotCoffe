@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderTableViewCell" textLabel="TcV-Fn-AMB" detailTextLabel="eI7-t2-UMM" style="IBUITableViewCellStyleSubtitle" id="2AU-iB-BAf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderTableViewCell" textLabel="TcV-Fn-AMB" detailTextLabel="eI7-t2-UMM" imageView="a0f-zW-hhF" style="IBUITableViewCellStyleSubtitle" id="2AU-iB-BAf">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2AU-iB-BAf" id="Hig-lK-lIO">
@@ -25,19 +25,23 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TcV-Fn-AMB">
-                                            <rect key="frame" x="20" y="6.0000000000000009" width="25" height="14.333333333333334"/>
+                                            <rect key="frame" x="78.666666666666686" y="6.0000000000000009" width="25" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eI7-t2-UMM">
-                                            <rect key="frame" x="19.999999999999996" y="22.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="78.666666666666686" y="22.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="avatar" id="a0f-zW-hhF">
+                                            <rect key="frame" x="20" y="0.0" width="43.666666666666686" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -130,9 +134,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add New Order" id="9Q5-Ak-pe1">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="PfO-y7-pAn"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="pY7-zE-vcZ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="pY7-zE-vcZ">
+                            <connections>
+                                <action selector="save" destination="aMF-Di-30y" id="vgY-iw-m5l"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailTextField" destination="CCA-LW-2Yo" id="RWd-Qm-aXE"/>
+                        <outlet property="nameTextField" destination="GfN-g7-iMu" id="UUG-kP-72x"/>
                         <outlet property="tableView" destination="Nnh-gr-7yG" id="4Ir-Di-8dw"/>
                     </connections>
                 </viewController>
@@ -178,6 +188,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="avatar" width="170.66667175292969" height="170.66667175292969"/>
         <image name="coffee-cup" width="170.66667175292969" height="170.66667175292969"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

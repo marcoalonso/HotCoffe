@@ -8,9 +8,11 @@
 import Foundation
 import UIKit
 
-class AddOrderViewController: UIViewController , UITabBarDelegate, UITableViewDataSource {
+class AddOrderViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     
     private var vm = AddCoffeeOrderViewModel()
     private var coffeeSizesSegmentedControl: UISegmentedControl!
@@ -27,6 +29,15 @@ class AddOrderViewController: UIViewController , UITabBarDelegate, UITableViewDa
         self.coffeeSizesSegmentedControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.vm.types.count
     }
@@ -35,5 +46,19 @@ class AddOrderViewController: UIViewController , UITabBarDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoffeTypeTableViewCell", for: indexPath)
         cell.textLabel?.text = self.vm.types[indexPath.row]
         return cell
+    }
+    
+    @IBAction func save() {
+        let name = self.nameTextField.text
+        let email = self.emailTextField.text
+        
+        let selectedSize = self.coffeeSizesSegmentedControl.titleForSegment(at: self.coffeeSizesSegmentedControl.selectedSegmentIndex)
+        guard let indexPath = self.tableView.indexPathForSelectedRow else { fatalError("Error in selecting coffee!") }
+        
+        self.vm.name = name
+        self.vm.email = email
+        self.vm.selectedSize = selectedSize
+        self.vm.selectedType = self.vm.types[indexPath.row]
+        
     }
 }
