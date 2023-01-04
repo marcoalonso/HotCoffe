@@ -18,9 +18,13 @@ class AddOrderViewController: UIViewController , UITableViewDelegate, UITableVie
     
     var delegate: AddCoffeOrderDelegate?
     
+    @IBOutlet weak var coffeNameSelected: UILabel!
+    @IBOutlet weak var amountCoffeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var amountCoffees: UIStepper!
     @IBOutlet weak var emailTextField: UITextField!
+    
     
     private var vm = AddCoffeeOrderViewModel()
     private var coffeeSizesSegmentedControl: UISegmentedControl!
@@ -40,6 +44,9 @@ class AddOrderViewController: UIViewController , UITableViewDelegate, UITableVie
         self.view.endEditing(true)
     }
     private func setupUI(){
+        amountCoffeLabel.text = "1"
+        coffeNameSelected.text = ""
+        amountCoffees.addTarget(self, action: #selector(stepperChanged), for: .valueChanged)
         nameTextField.keyboardType = .asciiCapable
         emailTextField.keyboardType = .emailAddress
         
@@ -56,9 +63,16 @@ class AddOrderViewController: UIViewController , UITableViewDelegate, UITableVie
         
     }
     
+    @objc func stepperChanged(_ sender: UIStepper){
+        print(sender.value)
+        var amount = Int(sender.value)
+        amountCoffeLabel.text = "\(amount)"
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //tableView.deselectRow(at: indexPath, animated: true)
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        coffeNameSelected.text = self.vm.types[indexPath.row]
         
     }
     
@@ -96,12 +110,14 @@ class AddOrderViewController: UIViewController , UITableViewDelegate, UITableVie
     @IBAction func save() {
         let name = self.nameTextField.text
         let email = self.emailTextField.text
+//        let price = self.amountCoffeLabel.text
         
         let selectedSize = self.coffeeSizesSegmentedControl.titleForSegment(at: self.coffeeSizesSegmentedControl.selectedSegmentIndex)
         guard let indexPath = self.tableView.indexPathForSelectedRow else { fatalError("Error in selecting coffee!") }
         
         self.vm.name = name
         self.vm.email = email
+//        self.vm.price = price
         self.vm.selectedSize = selectedSize
         self.vm.selectedType = self.vm.types[indexPath.row]
         

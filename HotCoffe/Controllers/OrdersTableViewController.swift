@@ -67,6 +67,8 @@ class OrdersTableViewController: UITableViewController, AddCoffeOrderDelegate {
         return 80
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.orderListViewModel.ordersViewModel.count
     }
@@ -85,7 +87,7 @@ class OrdersTableViewController: UITableViewController, AddCoffeOrderDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DetailOrderViewController") as! DetailOrderViewController
         vc.coffeOrder = self.orderListViewModel.orderViewModel(at: indexPath.row)
-        vc.modalTransitionStyle = .flipHorizontal
+        vc.modalTransitionStyle = .coverVertical
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }

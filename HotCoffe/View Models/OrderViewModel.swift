@@ -38,6 +38,10 @@ extension OrderViewModel {
         return self.order.email
     }
     
+//    var price: String {
+//        return self.order.price
+//    }
+    
     var type: String {
         return self.order.type.rawValue.capitalized
     }
