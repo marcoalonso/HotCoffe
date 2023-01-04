@@ -62,7 +62,6 @@
 		6C46F428295BB38F00D07553 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				6C25A6FD296384B0006411AC /* Models */,
 				6C46F429295BB39E00D07553 /* Webservice.swift */,
 			);
 			path = Services;
@@ -105,6 +104,7 @@
 		6CA012FE295A97CB00382936 /* HotCoffe */ = {
 			isa = PBXGroup;
 			children = (
+				6C25A6FD296384B0006411AC /* Models */,
 				6C78E30A29651A22000B0D1E /* View Models */,
 				6C46F428295BB38F00D07553 /* Services */,
 				6CA01313295A980300382936 /* Controllers */,
