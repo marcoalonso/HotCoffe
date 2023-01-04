@@ -81,4 +81,14 @@ class OrdersTableViewController: UITableViewController, AddCoffeOrderDelegate {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailOrderViewController") as! DetailOrderViewController
+        vc.coffeOrder = self.orderListViewModel.orderViewModel(at: indexPath.row)
+        vc.modalTransitionStyle = .flipHorizontal
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    
 }

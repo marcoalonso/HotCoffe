@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import IQKeyboardManagerSwift
 
 protocol AddCoffeOrderDelegate {
     func addCoffeOrderViewControllerDidSave(order: Order, controller: UIViewController)
@@ -29,11 +30,22 @@ class AddOrderViewController: UIViewController , UITableViewDelegate, UITableVie
         self.tableView.register(UINib(nibName: "NewCoffeeCell", bundle: nil), forCellReuseIdentifier: "CoffeTypeTableViewCell")
         setupUI()
     }
+    
+    override func awakeFromNib() {
+          IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Ok"
+       }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     private func setupUI(){
+        nameTextField.keyboardType = .asciiCapable
+        emailTextField.keyboardType = .emailAddress
+        
         self.coffeeSizesSegmentedControl = UISegmentedControl(items: self.vm.sizes)
+        self.coffeeSizesSegmentedControl.selectedSegmentTintColor = .brown
+        self.coffeeSizesSegmentedControl.tintColor = .brown
         self.coffeeSizesSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.addSubview(self.coffeeSizesSegmentedControl)
